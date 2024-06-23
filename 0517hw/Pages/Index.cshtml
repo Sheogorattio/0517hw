@@ -1,0 +1,33 @@
+﻿@page
+
+@functions {
+
+    public string currentlayout { get; set; } = "_Layout";
+    public void OnGet()
+    {
+        currentlayout = "_Layout";
+    }
+    public void OnPost(string layout)
+    {
+        currentlayout = layout;
+
+
+    }
+}
+
+
+<h2>@currentlayout</h2>
+
+
+@{
+    ViewData["Title"] = "Home page";
+    Layout = currentlayout;
+
+}
+
+
+
+<form method="post">
+    <input type="submit" name="layout" value="_Layout2" />
+    <input type="submit" name="layout" value="_Layout" />
+</form>
